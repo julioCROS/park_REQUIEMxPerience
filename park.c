@@ -8,6 +8,10 @@
 #include <string.h>
 #include "libs/glm.h"
 #include "libs/sgi.h"
+#include "libs/glmint.h"
+
+float rotacao = 0.1;
+
 
 
 enum CAMERAS { TERCEIRA_PESSOA = 1, PRIMEIRA_PESSOA, ESTATICA };
@@ -28,13 +32,19 @@ struct {
 
 void drawmodel(void){
   if(!worldMAP){
-  	worldMAP = glmReadOBJ("data/al.obj");
+  	worldMAP = glmReadOBJ("objs/Concept3_Mapa.obj");
   	if (!worldMAP) exit(0);
-  	glmUnitize(worldMAP);
-  	glmFacetNormals(worldMAP);
-  	glmVertexNormals(worldMAP, 90.0);
   }
-  glmDraw(worldMAP, GLM_SMOOTH | GLM_MATERIAL);
+    //glmUnitize(worldMAP);
+    //glmFacetNormals(worldMAP);
+    //glmVertexNormals(worldMAP, 90.0);*/
+    glmDraw(worldMAP, GLM_TEXTURE);
+/*
+  glPushMatrix();
+    glTranslated(0,0,0);
+		glScalef(1,1,1);
+    glmDraw(al, GLM_TEXTURE);
+  glPopMatrix();*/
 
 }
 
@@ -82,9 +92,9 @@ void posicionaCamera(int x, int y){
     teta = (teta + xChange/150);
     phi = (phi - yChange/150);
 
-    if(phi >= 180){
+    if(phi >= 360){
       //limite de 180 para o phi
-      phi = 180;
+      phi = 0;
     }
 
     // guarda o x e y do mouse para usar na comparação do próximo frame
@@ -113,16 +123,16 @@ void inicializa(){
     glEnable(GL_BLEND);                                //ativa a mesclagem de cores
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); //ativando o blend, podemos criar objetos transparentes
     xCursor = 0;                                       //a câmera começa olhando para o ponto 0
-    yCursor = 0;
+    yCursor = 50;
     zCursor = 0;
 }
 
 //função que desenhará tudo o que aparece na tela
 void desenhaCena() {
     //esfera de raio 100
-    camera.x = 10 * sin(phi) * cos(teta);  //coordenada x denotada em coordenadas esféricas
-    camera.z = 10 * sin(phi) * sin(teta); //coordenada z denotada em coordenadas esféricas
-    camera.y = 10 * cos(phi);          //coordenada y denotada em coordenadas esféricas
+    camera.x = -10* sin(phi) * cos(teta);  //coordenada x denotada em coordenadas esféricas
+    camera.z = -10* sin(phi) * sin(teta); //coordenada z denotada em coordenadas esféricas
+    camera.y = -10* cos(phi);          //coordenada y denotada em coordenadas esféricas
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -140,15 +150,15 @@ void desenhaCena() {
         break;
 
     case PRIMEIRA_PESSOA:
-        gluLookAt( xCursor+10, 10, zCursor+0,                    //já aqui, a câmera está posicionada no centro da esfera
+        gluLookAt( xCursor, 10, zCursor,                    //já aqui, a câmera está posicionada no centro da esfera
             xCursor+camera.x, camera.y, zCursor+camera.z,     //e a câmera estará olhando para a casca da esfera (primeira pessoa)
             0, 1, 0);                                        //vetor UP, apontando para o eixo Y (para cima)
         break;
 
     case ESTATICA:
     default:
-        gluLookAt(0, 0, 10,   // Z=200
-                  0, 0, 0,    // (0, 0, 0) origem do mundo
+        gluLookAt(20, 13, 1,   // Z=200
+                  0, 9, 0,    // (0, 0, 0) origem do mundo
                   0, 1, 0);  //nesse exemplo mais simples, estamos no ponto Z=200 olhando para o ponto 0
         break;
     }
@@ -156,8 +166,11 @@ void desenhaCena() {
 
     glEnable(GL_LIGHTING);
     glPushMatrix();
-    glPopMatrix();
+    glRotatef(rotacao,0,1,0);
     drawmodel();
+    glPopMatrix();
+    rotacao = rotacao - 0.1;
+    printf("%f\n", rotacao );
     glDisable(GL_LIGHTING);
 
     glutSwapBuffers();
