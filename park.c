@@ -14,10 +14,12 @@ enum CAMERAS { TERCEIRA_PESSOA = 1, PRIMEIRA_PESSOA, ESTATICA };
 int modoCAM = TERCEIRA_PESSOA;            //variável responsável por guardar o modo de câmera que está sendo utilizado
 
 int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na função posicionaCamera
-int xCursor, yCursor, zCursor;  //guarda o centro do cursor
+float xCursor, yCursor, zCursor;  //guarda o centro do cursor
 float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
+int dX, dY, dZ;
 
 GLMmodel* worldMAP = NULL;
+GLMmodel* cityModel = NULL;
 
 
 // estrutura de dados que representará as coordenadas da câmera
@@ -28,14 +30,29 @@ struct {
 
 void drawmodel(void){
   if(!worldMAP){
-  	worldMAP = glmReadOBJ("data/al.obj");
+  	worldMAP = glmReadOBJ("data/12228_Dog_v1_L2.obj");
   	if (!worldMAP) exit(0);
   	glmUnitize(worldMAP);
   	glmFacetNormals(worldMAP);
-  	glmVertexNormals(worldMAP, 90.0);
+  	glmVertexNormals(worldMAP, 90.0, 1);
   }
-  glmDraw(worldMAP, GLM_SMOOTH | GLM_MATERIAL);
+  glmDraw(worldMAP, GLM_TEXTURE | GLM_SMOOTH | GLM_COLOR);
 
+}
+
+void drawmodelCity(){
+
+    if(!cityModel){
+        cityModel = glmReadOBJ("/home/aluno/Área de Trabalho/park_TP2-master/data/test/bikinitp2.obj");
+        glmScale(cityModel, 200.0);
+        if(!cityModel)
+            exit(0);
+        glmUnitize(cityModel);
+        glmFacetNormals(cityModel);
+        glmVertexNormals(cityModel, 90.0, 1);   //(model, angle, bool keep_existing)
+    }
+
+    glmDraw(cityModel, GLM_SMOOTH | GLM_TEXTURE | GLM_COLOR);
 }
 
 
@@ -45,10 +62,32 @@ void teclado(unsigned char key, int x, int y) {
             exit(0);
             break;
         case 's':   //andar pelo plano X-Z utilizando W A S D
-            xCursor++;
+            if(modoCAM == PRIMEIRA_PESSOA){
+              xCursor += (xCursor - camera.x)/10;
+              yCursor += (yCursor - camera.y)/10;
+              zCursor += (zCursor - camera.z)/10;
+
+              camera.x += (xCursor - camera.x)/10;
+              camera.y += (yCursor - camera.y)/10;
+              camera.z += (zCursor - camera.z)/10;
+            }
+            else{
+              xCursor++;
+            }
             break;
         case 'w':
-            xCursor--;
+            if(modoCAM == PRIMEIRA_PESSOA){
+              xCursor -= (xCursor - camera.x)/10;
+              yCursor -= (yCursor - camera.y)/10;
+              zCursor -= (zCursor - camera.z)/10;
+
+              camera.x -= (xCursor - camera.x)/10;
+              camera.y -= (yCursor - camera.y)/10;
+              camera.z -= (zCursor - camera.z)/10;
+            }
+            else{
+              xCursor--;
+            }
             break;
         case 'a':
             zCursor++;
@@ -87,7 +126,7 @@ void posicionaCamera(int x, int y){
       phi = 180;
     }
 
-    // guarda o x e y do mouse para usar na comparação do próximo frame
+    // guarda o x e y do mouse para usar naint  comparação do próximo frame
     xMouse = x;
     yMouse = y;
 }
@@ -140,7 +179,7 @@ void desenhaCena() {
         break;
 
     case PRIMEIRA_PESSOA:
-        gluLookAt( xCursor+10, 10, zCursor+0,                    //já aqui, a câmera está posicionada no centro da esfera
+        gluLookAt( xCursor, yCursor, zCursor,                    //já aqui, a câmera está posicionada no centro da esfera
             xCursor+camera.x, camera.y, zCursor+camera.z,     //e a câmera estará olhando para a casca da esfera (primeira pessoa)
             0, 1, 0);                                        //vetor UP, apontando para o eixo Y (para cima)
         break;
@@ -152,12 +191,13 @@ void desenhaCena() {
                   0, 1, 0);  //nesse exemplo mais simples, estamos no ponto Z=200 olhando para o ponto 0
         break;
     }
-
-
+    glColor3f(1,1,1);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     glEnable(GL_LIGHTING);
     glPushMatrix();
     glPopMatrix();
     drawmodel();
+    drawmodelCity();
     glDisable(GL_LIGHTING);
 
     glutSwapBuffers();

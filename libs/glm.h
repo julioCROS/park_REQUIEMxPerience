@@ -1,7 +1,9 @@
+#ifndef GLM_H
+#define GLM_H
 /*    
       glm.h
-      Nate Robins, 1997
-      ndr@pobox.com, http://www.pobox.com/~ndr/
+      Nate Robins, 1997, 2000
+      nate@pobox.com, http://www.pobox.com/~nate
  
       Wavefront OBJ model file format reader/writer/manipulator.
 
@@ -10,85 +12,139 @@
       coordinate generation (spheremap and planar projections) + more.
 
  */
+/*
+ * EDITADO PARA FUNCIONAR EXCLUSIVAMENTE COM O SOIL.
+ * (Edição por: Matheus Dutra Cerbino)
+ */
+
+#define WARNINGS_PRINT 0 //Se diferente de 0 printa as warnings
 
 
-#include <GL/glut.h>
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+#endif
+
+#define GLM_MAX_SHININESS 100.0 /* for Poser */
+#define GLM_MAX_TEXTURE_SIZE 0 /* must be a power of 2 (i.e. 1024).
+				  0 means no limit. */
 
 
 #ifndef M_PI
-#define M_PI 3.14159265
+#define M_PI 3.14159265f
 #endif
 
-#define GLM_NONE     (0)		/* render with only vertices */
-#define GLM_FLAT     (1 << 0)		/* render with facet normals */
-#define GLM_SMOOTH   (1 << 1)		/* render with vertex normals */
-#define GLM_TEXTURE  (1 << 2)		/* render with texture coords */
-#define GLM_COLOR    (1 << 3)		/* render with colors */
-#define GLM_MATERIAL (1 << 4)		/* render with materials */
-
+#define GLM_NONE     (0)            /* render with only vertices */
+#define GLM_FLAT     (1 << 0)       /* render with facet normals */
+#define GLM_SMOOTH   (1 << 1)       /* render with vertex normals */
+#define GLM_TEXTURE  (1 << 2)       /* render with texture coords */
+#define GLM_COLOR    (1 << 3)       /* render with colors */
+#define GLM_MATERIAL (1 << 4)       /* render with materials */
+#define GLM_2_SIDED  (1 << 5)       /* render two-sided polygons */
 
 /* GLMmaterial: Structure that defines a material in a model. 
  */
 typedef struct _GLMmaterial
 {
-  char* name;				/* name of material */
-  GLfloat diffuse[4];			/* diffuse component */
-  GLfloat ambient[4];			/* ambient component */
-  GLfloat specular[4];			/* specular component */
-  GLfloat emmissive[4];			/* emmissive component */
-  GLfloat shininess;			/* specular exponent */
+  char* name;                   /* name of material */
+  GLfloat diffuse[4];           /* diffuse component */
+  GLfloat ambient[4];           /* ambient component */
+  GLfloat specular[4];          /* specular component */
+#if 0
+  GLfloat emmissive[4];         /* emmissive component */
+#endif
+  GLfloat shininess;            /* specular exponent */
+  GLuint map_diffuse;     /* diffuse texture ID */
+#if 0
+  GLuint map_ambient;     /* ambient texture ID */
+  GLuint map_specular;     /* specular texture ID */
+  GLuint map_bump;     /* specular texture ID */
+  GLfloat dissolve;             /* transparency */
+  GLuint map_dissolve;     /* alpha texture ID */
+  GLuint lighting;                /* 0=disable, 1=ambient+diffuse, 2=full */
+#endif
+#ifdef AVL
+  int height,
+      width;
+  unsigned char* image;
+  char *t_filename;
+  GLuint t_id[1];	
+#endif
 } GLMmaterial;
 
 /* GLMtriangle: Structure that defines a triangle in a model.
  */
 typedef struct _GLMtriangle {
-  GLuint vindices[3];			/* array of triangle vertex indices */
-  GLuint nindices[3];			/* array of triangle normal indices */
-  GLuint tindices[3];			/* array of triangle texcoord indices*/
-  GLuint findex;			/* index of triangle facet normal */
+  GLuint vindices[3];           /* array of triangle vertex indices */
+  GLuint nindices[3];           /* array of triangle normal indices */
+  GLuint tindices[3];           /* array of triangle texcoord indices*/
+  GLuint findex;                /* index of triangle facet normal */
+#ifdef MATERIAL_BY_FACE
+  GLuint material;
+#endif
 } GLMtriangle;
+
+typedef struct _GLMtexture {
+  char *name;
+  GLuint id;                    /* OpenGL texture ID */
+  GLfloat width;		/* width and height for texture coordinates */
+  GLfloat height;
+} GLMtexture;
+
 
 /* GLMgroup: Structure that defines a group in a model.
  */
 typedef struct _GLMgroup {
-  char*             name;		/* name of this group */
-  GLuint            numtriangles;	/* number of triangles in this group */
-  GLuint*           triangles;		/* array of triangle indices */
-  GLuint            material;           /* index to material for group */
-  struct _GLMgroup* next;		/* pointer to next group in model */
+  char*             name;           /* name of this group */
+  GLuint            numtriangles;   /* number of triangles in this group */
+  GLuint*           triangles;      /* array of triangle indices */
+  GLuint            material;       /* index to material for group */
+  struct _GLMgroup* next;           /* pointer to next group in model */
 } GLMgroup;
 
 /* GLMmodel: Structure that defines a model.
  */
 typedef struct _GLMmodel {
-  char*    pathname;			/* path to this model */
-  char*    mtllibname;			/* name of the material library */
+  char*    pathname;            /* path to this model */
+  char*    mtllibname;          /* name of the material library */
 
-  GLuint   numvertices;			/* number of vertices in model */
-  GLfloat* vertices;			/* array of vertices  */
+  GLuint   numvertices;         /* number of vertices in model */
+  GLfloat* vertices;            /* array of vertices  */
 
-  GLuint   numnormals;			/* number of normals in model */
-  GLfloat* normals;			/* array of normals */
+  GLuint   numnormals;          /* number of normals in model */
+  GLfloat* normals;             /* array of normals */
 
-  GLuint   numtexcoords;		/* number of texcoords in model */
-  GLfloat* texcoords;			/* array of texture coordinates */
+  GLuint   numtexcoords;        /* number of texcoords in model */
+  GLfloat* texcoords;           /* array of texture coordinates */
 
-  GLuint   numfacetnorms;		/* number of facetnorms in model */
-  GLfloat* facetnorms;			/* array of facetnorms */
+  GLuint   numfacetnorms;       /* number of facetnorms in model */
+  GLfloat* facetnorms;          /* array of facetnorms */
 
-  GLuint       numtriangles;		/* number of triangles in model */
-  GLMtriangle* triangles;		/* array of triangles */
+  GLuint       numtriangles;    /* number of triangles in model */
+  GLMtriangle* triangles;       /* array of triangles */
 
-  GLuint       nummaterials;		/* number of materials in model */
-  GLMmaterial* materials;		/* array of materials */
+  GLuint       nummaterials;    /* number of materials in model */
+  GLMmaterial* materials;       /* array of materials */
 
-  GLuint       numgroups;		/* number of groups in model */
-  GLMgroup*    groups;			/* linked list of groups */
+  GLuint       numgroups;       /* number of groups in model */
+  GLMgroup*    groups;          /* linked list of groups */
 
-  GLfloat position[3];			/* position of the model */
+#ifndef AVL
+  GLuint       numtextures;
+  GLMtexture*  textures;
+#endif
+
+  GLfloat position[3];          /* position of the model */
 
 } GLMmodel;
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /* glmUnitize: "unitize" a model by translating it to the origin and
  * scaling it to fit in a unit cube around the origin.  Returns the
@@ -149,9 +205,10 @@ glmFacetNormals(GLMmodel* model);
  *
  * model - initialized GLMmodel structure
  * angle - maximum angle (in degrees) to smooth across
+ * keep_existing - if GL_TRUE, do not overwrite existing normals
  */
 GLvoid
-glmVertexNormals(GLMmodel* model, GLfloat angle);
+glmVertexNormals(GLMmodel* model, GLfloat angle, GLboolean keep_existing);
 
 /* glmLinearTexture: Generates texture coordinates according to a
  * linear projection of the texture map.  It generates these by
@@ -190,7 +247,7 @@ glmDelete(GLMmodel* model);
  * filename - name of the file containing the Wavefront .OBJ format data.  
  */
 GLMmodel* 
-glmReadOBJ(char* filename);
+glmReadOBJ(const char* filename);
 
 /* glmWriteOBJ: Writes a model description in Wavefront .OBJ format to
  * a file.
@@ -245,3 +302,22 @@ glmList(GLMmodel* model, GLuint mode);
  */
 GLvoid
 glmWeld(GLMmodel* model, GLfloat epsilon);
+
+GLuint
+glmLoadTexture(const char *filename, GLboolean alpha, GLboolean repeat, GLboolean filtering, GLboolean mipmaps, GLfloat *width, GLfloat *height);
+
+#ifdef AVL
+//AVL Prototypes
+//AVL Flip Texture
+GLvoid glmFlipTexture(unsigned char* texture, int width, int height);
+
+//AVL Flip Model Textures
+GLvoid glmFlipModelTextures(GLMmodel* model);
+
+//AVL END Prototypes
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+#endif
