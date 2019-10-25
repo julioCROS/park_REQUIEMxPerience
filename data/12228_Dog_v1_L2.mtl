@@ -1,0 +1,11 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 12.12.2011 11:16:01
+
+newmtl Dog
+Kd 1 1 1
+Ks 0 0 0
+illum 2
+map_Ka Dog_diffuse.jpg
+#map_Kd Dog_diffuse.jpg
+map_Kd Dog_diffuse.jpg
+

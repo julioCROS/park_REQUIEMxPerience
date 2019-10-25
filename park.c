@@ -14,10 +14,12 @@ enum CAMERAS { TERCEIRA_PESSOA = 1, PRIMEIRA_PESSOA, ESTATICA };
 int modoCAM = TERCEIRA_PESSOA;            //variável responsável por guardar o modo de câmera que está sendo utilizado
 
 int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na função posicionaCamera
-int xCursor, yCursor, zCursor;  //guarda o centro do cursor
+float xCursor, yCursor, zCursor;  //guarda o centro do cursor
 float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
+float rotacao = 0.1;
 
 GLMmodel* worldMAP = NULL;
+
 
 
 // estrutura de dados que representará as coordenadas da câmera
@@ -28,13 +30,10 @@ struct {
 
 void drawmodel(void){
   if(!worldMAP){
-  	worldMAP = glmReadOBJ("data/al.obj");
+  	worldMAP = glmReadOBJ("data/Concept3_Mapa.obj");
   	if (!worldMAP) exit(0);
-  	glmUnitize(worldMAP);
-  	glmFacetNormals(worldMAP);
-  	glmVertexNormals(worldMAP, 90.0);
   }
-  glmDraw(worldMAP, GLM_SMOOTH | GLM_MATERIAL);
+  glmDraw(worldMAP, GLM_TEXTURE | GLM_SMOOTH | GLM_COLOR);
 
 }
 
@@ -45,10 +44,32 @@ void teclado(unsigned char key, int x, int y) {
             exit(0);
             break;
         case 's':   //andar pelo plano X-Z utilizando W A S D
-            xCursor++;
+            if(modoCAM == PRIMEIRA_PESSOA){
+              xCursor += (xCursor - camera.x)/30;
+              yCursor += (yCursor - camera.y)/30;
+              zCursor += (zCursor - camera.z)/30;
+
+              camera.x += (xCursor - camera.x)/30;
+              camera.y += (yCursor - camera.y)/30;
+              camera.z += (zCursor - camera.z)/30;
+            }
+            else{
+              xCursor++;
+            }
             break;
         case 'w':
-            xCursor--;
+            if(modoCAM == PRIMEIRA_PESSOA){
+              xCursor -= (xCursor - camera.x)/30;
+              yCursor -= (yCursor - camera.y)/30;
+              zCursor -= (zCursor - camera.z)/30;
+
+              camera.x -= (xCursor - camera.x)/30;
+              camera.y -= (yCursor - camera.y)/30;
+              camera.z -= (zCursor - camera.z)/30;
+            }
+            else{
+              xCursor--;
+            }
             break;
         case 'a':
             zCursor++;
@@ -82,12 +103,12 @@ void posicionaCamera(int x, int y){
     teta = (teta + xChange/150);
     phi = (phi - yChange/150);
 
-    if(phi >= 180){
+  /*  if(phi >= 360){
       //limite de 180 para o phi
-      phi = 180;
-    }
+      phi = 0;
+    }*/
 
-    // guarda o x e y do mouse para usar na comparação do próximo frame
+    // guarda o x e y do mouse para usar naint  comparação do próximo frame
     xMouse = x;
     yMouse = y;
 }
@@ -140,28 +161,34 @@ void desenhaCena() {
         break;
 
     case PRIMEIRA_PESSOA:
-        gluLookAt( xCursor+10, 10, zCursor+0,                    //já aqui, a câmera está posicionada no centro da esfera
+        gluLookAt( xCursor, yCursor, zCursor,                    //já aqui, a câmera está posicionada no centro da esfera
             xCursor+camera.x, camera.y, zCursor+camera.z,     //e a câmera estará olhando para a casca da esfera (primeira pessoa)
             0, 1, 0);                                        //vetor UP, apontando para o eixo Y (para cima)
         break;
 
-    case ESTATICA:
-    default:
-        gluLookAt(0, 0, 10,   // Z=200
-                  0, 0, 0,    // (0, 0, 0) origem do mundo
-                  0, 1, 0);  //nesse exemplo mais simples, estamos no ponto Z=200 olhando para o ponto 0
-        break;
+      case ESTATICA:
+      default:
+          gluLookAt(20, 13, 1,   // Z=200
+                    0, 9, 0,    // (0, 0, 0) origem do mundo
+                    0, 1, 0);  //nesse exemplo mais simples, estamos no ponto Z=200 olhando para o ponto 0
+          break;
     }
-
-
+    glColor3f(1,1,1);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     glEnable(GL_LIGHTING);
+
     glPushMatrix();
-    glPopMatrix();
+    glRotatef(rotacao,0,1,0);
     drawmodel();
+    glPopMatrix();
+
+    rotacao = rotacao - 0.1;
+    printf("%f\n", rotacao );
     glDisable(GL_LIGHTING);
 
     glutSwapBuffers();
 }
+
 
 
 int main(int argc, char *argv[]) {
@@ -174,8 +201,8 @@ int main(int argc, char *argv[]) {
     glutInitWindowPosition (0, 0);
 
     glutCreateWindow("Exemplo LookAt");
-    // glutEnterGameMode();                 // fullscreen baby! (retire o comentário para ativar a tela cheia)
-    // glutSetCursor(GLUT_CURSOR_NONE);     // esconde o cursor do sistema
+    //glutEnterGameMode();                 // fullscreen baby! (retire o comentário para ativar a tela cheia)
+    glutSetCursor(GLUT_CURSOR_NONE);     // esconde o cursor do sistema
 
 
     glutDisplayFunc(desenhaCena);
