@@ -1,6 +1,9 @@
+#include <SFML/Audio.hpp>
+#include <iostream>
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <SOIL/SOIL.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
@@ -9,6 +12,9 @@
 #include "libs/glm.h"
 #include "libs/sgi.h"
 
+sf::Music park_music;
+
+
 enum CAMERAS { ESTATICA = 1, PRIMEIRA_PESSOA, TERCEIRA_PESSOA, BRINQUEDO1, BRINQUEDO2, BRINQUEDO3, BRINQUEDO_1_2_3};
 int modoCAM = ESTATICA;            //variável responsável por guardar o modo de câmera que está sendo utilizado
 
@@ -16,6 +22,8 @@ int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na funç�
 float xCursor, yCursor, zCursor;  //guarda o centro do cursor
 float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
 float rotacao = 0.1;
+
+int volumeMUSIC = 100;
 
 GLMmodel* worldMAP = NULL;
 
@@ -96,7 +104,6 @@ void teclado(unsigned char key, int x, int y) {
         case '1':
             modoCAM = ESTATICA;
         default:
-            printf("%f | %f | %f | \n",xCursor, yCursor, zCursor);
             break;
     }
 }
@@ -136,6 +143,11 @@ void redimensiona(int w, int h){
 }
 
 void inicializa(){
+
+    park_music.setLoop(true);
+    park_music.setVolume(volumeMUSIC);
+    park_music.play();
+
     glClearColor(1, 1, 1, 1);                          //cor de fundo branca
     glEnable(GL_BLEND);                                //ativa a mesclagem de cores
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); //ativando o blend, podemos criar objetos transparentes
@@ -247,7 +259,8 @@ void desenhaCena() {
 
 int main(int argc, char *argv[]) {
 
-
+      if(!park_music.openFromFile("mashup.ogg"))
+    printf("\n ERRO AO CARREGAR mashup.ogg");
 
     glutInit(&argc, argv);
     glutInitContextVersion(1, 1);
