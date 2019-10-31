@@ -14,6 +14,9 @@
 
 sf::Music park_music;
 
+//INSTALAÇÃO BIBLIOTECA "SFML AUDIO"
+//sudo apt-get install libsfml-dev
+
 
 enum CAMERAS { ESTATICA = 1, PRIMEIRA_PESSOA, TERCEIRA_PESSOA, BRINQUEDO1, BRINQUEDO2, BRINQUEDO3, BRINQUEDO_1_2_3};
 int modoCAM = ESTATICA;            //variável responsável por guardar o modo de câmera que está sendo utilizado
@@ -26,6 +29,7 @@ float rotacao = 0.1;
 int volumeMUSIC = 100;
 
 GLMmodel* worldMAP = NULL;
+GLMmodel* roda = NULL;
 
 
 // estrutura de dados que representará as coordenadas da câmera
@@ -34,12 +38,21 @@ struct {
   float targetX, targetY, targetZ;
 } camera;
 
-void drawmodel(void){
+void desenhaPARQUE(){
   if(!worldMAP){
   	worldMAP = glmReadOBJ("data/Concept3_Mapa.obj");
   	if (!worldMAP) exit(0);
   }
   glmDraw(worldMAP, GLM_TEXTURE | GLM_SMOOTH | GLM_COLOR);
+
+}
+
+void desenhaRODA(){
+  if(!roda){
+  	roda = glmReadOBJ("data/al.obj");
+  	if (!roda) exit(0);
+  }
+  glmDraw(roda, GLM_TEXTURE | GLM_SMOOTH | GLM_COLOR);
 
 }
 
@@ -161,15 +174,15 @@ void inicializa(){
   	glEnable(GL_LIGHT0);
 
   	// Set lighting intensity and color
-  	GLfloat qaAmbientLight[]	= {0.2, 0.2, 0.2, 1.0};
-  	GLfloat qaDiffuseLight[]	= {0.8, 0.8, 0.8, 1.0};
-  	GLfloat qaSpecularLight[]	= {1.0, 1.0, 1.0, 1.0};
+  	GLfloat qaAmbientLight[]	= {0.4, 0.3, 0.2, 1.0};
+  	GLfloat qaDiffuseLight[]	= {0.2, 0.2, 0.2, 0.5};
+  	GLfloat qaSpecularLight[]	= {0.1, 1.0, 1.0, 1.0};
   	glLightfv(GL_LIGHT0, GL_AMBIENT, qaAmbientLight);
   	glLightfv(GL_LIGHT0, GL_DIFFUSE, qaDiffuseLight);
   	glLightfv(GL_LIGHT0, GL_SPECULAR, qaSpecularLight);
 
   	// Set the light position
-  	GLfloat qaLightPosition[]	= {.5, .5, 0.0, 1.0};
+  	GLfloat qaLightPosition[]	= {0, 20, 0};
   	glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
 
 
@@ -245,11 +258,17 @@ void desenhaCena() {
     glEnable(GL_LIGHTING);
 
     glPushMatrix();
-    //glRotatef(rotacao,0,1,0);
-    drawmodel();
+      desenhaPARQUE();
     glPopMatrix();
 
-    //rotacao = rotacao - 0.1;
+    glPushMatrix();
+      glTranslatef(3,12,0);
+      glRotatef(rotacao,0,0,1);
+      glTranslatef(0,0,0);
+      desenhaRODA();
+    glPopMatrix();
+
+    rotacao = rotacao - 0.6;
     glDisable(GL_LIGHTING);
 
     glutSwapBuffers();
