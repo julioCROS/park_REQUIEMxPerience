@@ -9,9 +9,8 @@
 #include "libs/glm.h"
 #include "libs/sgi.h"
 
-
-enum CAMERAS { TERCEIRA_PESSOA = 1, PRIMEIRA_PESSOA, ESTATICA };
-int modoCAM = TERCEIRA_PESSOA;            //variável responsável por guardar o modo de câmera que está sendo utilizado
+enum CAMERAS { ESTATICA = 1, PRIMEIRA_PESSOA, TERCEIRA_PESSOA, BRINQUEDO1, BRINQUEDO2, BRINQUEDO3, BRINQUEDO_1_2_3};
+int modoCAM = ESTATICA;            //variável responsável por guardar o modo de câmera que está sendo utilizado
 
 int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na função posicionaCamera
 float xCursor, yCursor, zCursor;  //guarda o centro do cursor
@@ -19,7 +18,6 @@ float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
 float rotacao = 0.1;
 
 GLMmodel* worldMAP = NULL;
-
 
 
 // estrutura de dados que representará as coordenadas da câmera
@@ -45,13 +43,13 @@ void teclado(unsigned char key, int x, int y) {
             break;
         case 's':   //andar pelo plano X-Z utilizando W A S D
             if(modoCAM == PRIMEIRA_PESSOA){
-              xCursor += (xCursor - camera.x)/30;
-              yCursor += (yCursor - camera.y)/30;
-              zCursor += (zCursor - camera.z)/30;
+              xCursor += (xCursor - camera.x)/47;
+              yCursor += (yCursor - camera.y)/47;
+              zCursor += (zCursor - camera.z)/47;
 
-              camera.x += (xCursor - camera.x)/30;
-              camera.y += (yCursor - camera.y)/30;
-              camera.z += (zCursor - camera.z)/30;
+              camera.x += (xCursor - camera.x)/47;
+              camera.y += (yCursor - camera.y)/47;
+              camera.z += (zCursor - camera.z)/47;
             }
             else{
               xCursor++;
@@ -59,13 +57,13 @@ void teclado(unsigned char key, int x, int y) {
             break;
         case 'w':
             if(modoCAM == PRIMEIRA_PESSOA){
-              xCursor -= (xCursor - camera.x)/30;
-              yCursor -= (yCursor - camera.y)/30;
-              zCursor -= (zCursor - camera.z)/30;
+              xCursor -= (xCursor - camera.x)/47;
+              yCursor -= (yCursor - camera.y)/47;
+              zCursor -= (zCursor - camera.z)/47;
 
-              camera.x -= (xCursor - camera.x)/30;
-              camera.y -= (yCursor - camera.y)/30;
-              camera.z -= (zCursor - camera.z)/30;
+              camera.x -= (xCursor - camera.x)/47;
+              camera.y -= (yCursor - camera.y)/47;
+              camera.z -= (zCursor - camera.z)/47;
             }
             else{
               xCursor--;
@@ -77,15 +75,28 @@ void teclado(unsigned char key, int x, int y) {
         case 'd':
             zCursor--;
             break;
-        case '1':
+        case '7':
+            modoCAM = BRINQUEDO_1_2_3; //RODA GIGANTE, CARROSEL E BARCO
+            break;
+        case '6':
+            modoCAM = BRINQUEDO3; //BARCO
+            break;
+        case '5':
+            modoCAM = BRINQUEDO2; //CARROSEL SUPERIOR
+            break;
+        case '4':
+            modoCAM = BRINQUEDO1; //RODA GIGANTE
+            break;
+        case '3':
             modoCAM = TERCEIRA_PESSOA;
             break;
         case '2':
             modoCAM = PRIMEIRA_PESSOA;
             break;
-        case '3':
+        case '1':
             modoCAM = ESTATICA;
         default:
+            printf("%f | %f | %f | \n",xCursor, yCursor, zCursor);
             break;
     }
 }
@@ -102,11 +113,6 @@ void posicionaCamera(int x, int y){
     // com coordenada esférica
     teta = (teta + xChange/150);
     phi = (phi - yChange/150);
-
-  /*  if(phi >= 360){
-      //limite de 180 para o phi
-      phi = 0;
-    }*/
 
     // guarda o x e y do mouse para usar naint  comparação do próximo frame
     xMouse = x;
@@ -133,13 +139,42 @@ void inicializa(){
     glClearColor(1, 1, 1, 1);                          //cor de fundo branca
     glEnable(GL_BLEND);                                //ativa a mesclagem de cores
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); //ativando o blend, podemos criar objetos transparentes
-    xCursor = 0;                                       //a câmera começa olhando para o ponto 0
-    yCursor = 0;
-    zCursor = 0;
+    xCursor = 0.709259;                                       //a câmera começa olhando para o ponto 0
+    yCursor = 8.896676;
+    zCursor = -7.770996;
+
+    // Lighting set up
+  	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
+  	glEnable(GL_LIGHTING);
+  	glEnable(GL_LIGHT0);
+
+  	// Set lighting intensity and color
+  	GLfloat qaAmbientLight[]	= {0.2, 0.2, 0.2, 1.0};
+  	GLfloat qaDiffuseLight[]	= {0.8, 0.8, 0.8, 1.0};
+  	GLfloat qaSpecularLight[]	= {1.0, 1.0, 1.0, 1.0};
+  	glLightfv(GL_LIGHT0, GL_AMBIENT, qaAmbientLight);
+  	glLightfv(GL_LIGHT0, GL_DIFFUSE, qaDiffuseLight);
+  	glLightfv(GL_LIGHT0, GL_SPECULAR, qaSpecularLight);
+
+  	// Set the light position
+  	GLfloat qaLightPosition[]	= {.5, .5, 0.0, 1.0};
+  	glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
+
+
 }
 
 //função que desenhará tudo o que aparece na tela
 void desenhaCena() {
+
+    // Set material properties
+    GLfloat qaBlack[] = {0.0, 0.0, 0.0, 1.0};
+    GLfloat qaGreen[] = {0.0, 1.0, 0.0, 1.0};
+    GLfloat qaWhite[] = {1.0, 1.0, 1.0, 1.0};
+    glMaterialfv(GL_FRONT, GL_AMBIENT, qaGreen);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, qaGreen);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
+    glMaterialf(GL_FRONT, GL_SHININESS, 60.0);
+
     //esfera de raio 100
     camera.x = 10 * sin(phi) * cos(teta);  //coordenada x denotada em coordenadas esféricas
     camera.z = 10 * sin(phi) * sin(teta); //coordenada z denotada em coordenadas esféricas
@@ -154,6 +189,26 @@ void desenhaCena() {
     //define um LookAt diferente para cada modo da câmera, veja abaixo o
     // uso de cada um
     switch (modoCAM) {
+    case BRINQUEDO_1_2_3:
+        gluLookAt(0, 10, 9,
+                  0, 9, 0,
+                  0, 1, 0);
+            break;
+    case BRINQUEDO3:
+        gluLookAt(-5, 8.5, 4,
+                  -1, 9, 0,
+                  0, 1, 0);
+            break;
+    case BRINQUEDO2:
+        gluLookAt(3, 10, 5,
+                  -15, 6, 0,
+                  0, 1, 0);
+            break;
+    case BRINQUEDO1:
+        gluLookAt(5, 9, 4,
+                  0, 9, 0,
+                  0, 1, 0);
+            break;
     case TERCEIRA_PESSOA:
         gluLookAt(xCursor+camera.x, camera.y, zCursor+camera.z,//câmera posicionada na casca da esfera calculada (terceira pessoa)
             xCursor+0, 0, zCursor+0,                          //centro da esfera, o ponto em que estamos olhando
@@ -178,12 +233,11 @@ void desenhaCena() {
     glEnable(GL_LIGHTING);
 
     glPushMatrix();
-    glRotatef(rotacao,0,1,0);
+    //glRotatef(rotacao,0,1,0);
     drawmodel();
     glPopMatrix();
 
-    rotacao = rotacao - 0.1;
-    printf("%f\n", rotacao );
+    //rotacao = rotacao - 0.1;
     glDisable(GL_LIGHTING);
 
     glutSwapBuffers();
@@ -192,6 +246,9 @@ void desenhaCena() {
 
 
 int main(int argc, char *argv[]) {
+
+
+
     glutInit(&argc, argv);
     glutInitContextVersion(1, 1);
     glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
@@ -200,7 +257,7 @@ int main(int argc, char *argv[]) {
     glutInitWindowSize(1280, 720);
     glutInitWindowPosition (0, 0);
 
-    glutCreateWindow("Exemplo LookAt");
+    glutCreateWindow("twiceLAND -TP2 PARK (JIHYO)");
     //glutEnterGameMode();                 // fullscreen baby! (retire o comentário para ativar a tela cheia)
     glutSetCursor(GLUT_CURSOR_NONE);     // esconde o cursor do sistema
 
@@ -216,6 +273,8 @@ int main(int argc, char *argv[]) {
 
     inicializa();
     glutMainLoop();
+
+
 
     return 0;
 }
