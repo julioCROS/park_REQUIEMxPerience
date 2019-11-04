@@ -1,0 +1,10 @@
+newmtl initialShadingGroup
+illum 4
+Kd 1 1 1
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+illum 5
+map_Ka Dog_diffuse.jpg
+#map_Kd Dog_diffuse.jpg
+map_Kd Dog_diffuse.jpg
