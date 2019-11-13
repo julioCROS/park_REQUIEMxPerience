@@ -1,0 +1,42 @@
+newmtl cadeiracarrosselvoador:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeiracarrosselvoador1:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeiracarrosselvoador2:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeiracarrosselvoador3:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeiracarrosselvoador4:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeiracarrosselvoador5:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00

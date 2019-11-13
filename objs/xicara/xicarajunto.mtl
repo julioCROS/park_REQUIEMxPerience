@@ -1,0 +1,56 @@
+newmtl xicarajunto:lambert7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl xicarajunto:lambert7SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl xicarajunto:lambert7SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl xicarajunto:lambert7SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl xicarajunto:lambert7SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl xicarajunto:lambert7SG10
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl xicarajunto:lambert7SG12
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl xicarajunto:lambert7SG14
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd xicara_initialShadingGroup_Base_Color.png
+Ni 1.00
