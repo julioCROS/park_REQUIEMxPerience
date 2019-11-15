@@ -1,0 +1,119 @@
+newmtl carrosselplaneta:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG10
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG12
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG14
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG16
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG18
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG20
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG22
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG24
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG26
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG28
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG30
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselplaneta:lambert19SG32
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00

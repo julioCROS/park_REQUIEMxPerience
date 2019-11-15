@@ -1,0 +1,10 @@
+				X 		Y 		Z
+cadeiracarrossel		0.013		9.286		4.24
+
+cabinerodagigante		2.54		8.696		2.198
+
+basexicara			3.088		7.863		-1.529
+
+xicara				3.076		8.019		-1.541
+
+carrosselplaneta		0		5.076		0

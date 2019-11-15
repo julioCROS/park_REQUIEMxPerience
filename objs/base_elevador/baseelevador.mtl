@@ -1,0 +1,615 @@
+newmtl Planeta1:lambert7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco1:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco2:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco3:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco4:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco5:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco6:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco7:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco8:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco9:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco10:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco11:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl banco12:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl barco:barco_lambert20SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl barraquinha1:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl barraquinha2:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl barraquinha3:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl barraquinha4:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira1:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira2:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira3:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira4:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira5:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira6:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira7:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira8:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira9:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira10:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira11:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira12:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira13:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira14:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira15:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira16:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira17:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira18:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira19:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira20:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira21:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl cadeira22:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrinho:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrinho1:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrinho2:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrinho3:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrinho4:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrinho5:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrinho6:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl carrosselvoador:lambert23SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl chao:lambert14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl chaoestacionamento:lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl grama:lambert15SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd lambert3SG_Base_Color.png
+Ni 1.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd cabine_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd rodagigantearo_initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl lixo:lambert16SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl lixo1:lambert16SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl lixo2:lambert16SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl lixo3:lambert16SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl muro:lambert17SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl placabarcoviking:lambert25SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl placacarrosselvoador:lambert26SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl placanome:lambert28SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl placanomeparque:lambert29SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl placarodagigante:lambert27SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl planeta2:lambert8SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl planeta3:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl planeta4:lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste1:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste2:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste3:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste4:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste5:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste6:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste7:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste8:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste9:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste10:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste11:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste12:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl poste13:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl suportebarco:lambert21SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl suporterodagigante:lambert22SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
+newmtl suporterodagigante1:lambert22SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd initialShadingGroup_Base_Color.png
+Ni 1.00
