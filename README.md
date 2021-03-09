@@ -1,37 +1,49 @@
-# park_TP2
-and the battle begins... 
+# park_TP2 **
 
-trabalho prático 02 - Parque de diversões
-REQUIEM xPerience - this is... REQUIEM
-_________________________________________________
 
-Trabalho realizado por :
+<p> practical work 02 of computer graphics - Amusement park. </p>
+<p>Project base: https://github.com/fegemo/cefet-cg/blob/master/assignments/tp2-amusement/README.md </p>
+     
+     
+     
+>"これがレクイエムだ" 
+           - gold experience REQUIEM
 
-Victor Le Roy Matos
-Carlos Eduardo Ivis de Oliveira Santos
-Julio Cesar Rocha de Oliveira Souza
+**Made by :**
+- Julio Cesar Rocha (julioCROS)
+- Victor Le Roy Matos (vmLeroy) 
+- Carlos Eduardo Ivis (carlosivis) 
 
-_________________________________________________
 
-Biblioteca necessária : "SFML AUDIO"
+**Linux required libraries**: 
+- sudo apt-get install libsfml-dev
+- sudo apt-get install libglew-dev          
+- sudo apt-get install libsoil-dev         
+- sudo apt-get install freeglut3 freeglut3-dev 
 
-Instalação : sudo apt-get install libsfml-dev
-_________________________________________________
+
 *************************************************
-IMPORTANTE : Execução do programa pelo MakeFile é
-realizada pelo comando "make REQUIEM", ao invés do
-conhecido "make run".
+**IMPORTANT** : Execution of the program by MakeFile is
+performed by the command "make REQUIEM", instead of the
+known "make run".
 **************************************************
+
+
+<details><summary>Music and sounds utilized</summary>
+<p>
+  
+<pre>
+1. Smash Bros Brawl - Main theme                          : https://www.youtube.com/watch?v=zeKE0NHUtUw
+2. twice - Feel Special | Fancy | Likey | TT mashup       : https://www.youtube.com/watch?v=qZoJme02cG4
+3. Awaken - Pillar men theme (JoJoREFENRECE)              : https://www.youtube.com/watch?v=XUhVCoTsBaM
+</pre>
+
+</p>
+</details>
+
 _________________________________________________
 
-Aúdios utilizados :
--Smash Bros Brawl - Main theme
--twice - Feel Special | Fancy | Likey | TT mashup
--Awaken - Pillar men theme (JoJoREFENRECE)
-
-_________________________________________________
-
-"Isso é... REQUIEM"
+>"これがレクイエムだ" 
            - gold experience REQUIEM
 
 
