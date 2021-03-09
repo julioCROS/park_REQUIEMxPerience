@@ -1,4 +1,4 @@
-# park_TP2 **
+# park_TP2
 
 
 <p> practical work 02 of computer graphics - Amusement park. </p>
@@ -41,29 +41,34 @@ known "make run".
 </p>
 </details>
 
-_________________________________________________
+<details><summary>How it works?</summary>
+<p>
+  
+<pre>
+Home menu screen -> "Jogar" (Play) , "Créditos" (Credits) and "Sair" (Exit) buttons  (with Korean language support)
 
->"これがレクイエムだ" 
-           - gold experience REQUIEM
+- By clicking button "Jogar", the main game screen is loaded.
+- By clicking button "Créditos" the credits screen is loaded.
+- By clicking button "Sair" the game is closed.
+
+The game has 7 cameras, 6 of which are statically positioned in one direction
+pointing at toys or the entire park and a free mode camera.
+
+The commands to access the cameras are done by the following buttons:
+
+1 - STATIC
+2 - Free mode (FIRST PERSON)
+3 - Park overview (THIRD PERSON)
+4 - GIANT WHEEL Vision
+5 - SUPERIOR CAROUSEL Vision
+6 - BOAT Vision
+7 - GIANT WHEEL, SUPERIOR CAROUSEL and BOAT Vision
+
+The FOG can be turned on and off by pressing the 'f' key
+</pre>
+
+</p>
+</details>
 
 
-Tela de menu inicial -> Botões de "Jogar", "Créditos" e "Sair" (c/ suporte ao idioma coreano)
 
--Ao clicar no botão "Jogar", a tela de jogo principal é carregada
--Ao clicar no botão "Créditos" a tela de cŕeditos é carregada
--Ao cliciar no botão "Sair" o jogo é fechado
-
-O jogo possui 7 câmeras, sendo 6 delas posicionadas estaticamente em uma direção
-apontando para brinquedos ou ao parque inteiro e uma câmera de modo livre
-
-Os comandos para acessar as câmeras é feito pelos seguintes botões:
-
-1 - ESTÁTICA
-2 - Modo livre (PRIMEIRA PESSOA)
-3 - Visão geral do parque (TERCEIRA PESSOA)
-4 - Visão RODA GIGANTE
-5 - Visão CARROSSEL SUPERIOR
-6 - Visão BARCO
-7 - Visão RODA GIGANTE, CARROSSEL SUPERIOR e BARCO
-
-O FOG pode ser ligado e desligado pressionando a tecla 'f'.
